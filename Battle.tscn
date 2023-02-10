@@ -79,23 +79,74 @@ text = "MP
 align = 1
 valign = 1
 
-[node name="SwordButton" type="Button" parent="UI"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 9.0
-margin_top = 73.0
-margin_right = -49.99
-margin_bottom = -74.0
-text = "SWORD"
-
 [node name="TextboxPanel" type="Panel" parent="UI"]
 margin_left = -2.0
 margin_top = 137.0
 margin_right = 92.0
 margin_bottom = 162.0
 
+[node name="BattleActionButtons" type="GridContainer" parent="UI"]
+margin_left = 9.0
+margin_top = 73.0
+margin_right = 81.0
+margin_bottom = 134.0
+custom_constants/vseparation = 3
+custom_constants/hseparation = 8
+columns = 2
+
+[node name="SwordButton" type="Button" parent="UI/BattleActionButtons"]
+margin_right = 32.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 32, 13 )
+text = "SWORD"
+
+[node name="TestButton" type="Button" parent="UI/BattleActionButtons"]
+margin_left = 40.0
+margin_right = 72.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 32, 13 )
+
+[node name="TestButton2" type="Button" parent="UI/BattleActionButtons"]
+margin_top = 16.0
+margin_right = 32.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 32, 13 )
+
+[node name="TestButton3" type="Button" parent="UI/BattleActionButtons"]
+margin_left = 40.0
+margin_top = 16.0
+margin_right = 72.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 32, 13 )
+
+[node name="TestButton4" type="Button" parent="UI/BattleActionButtons"]
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 32, 13 )
+
+[node name="TestButton5" type="Button" parent="UI/BattleActionButtons"]
+margin_left = 40.0
+margin_top = 32.0
+margin_right = 72.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 32, 13 )
+
+[node name="TestButton6" type="Button" parent="UI/BattleActionButtons"]
+margin_top = 48.0
+margin_right = 32.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 32, 13 )
+
+[node name="TestButton7" type="Button" parent="UI/BattleActionButtons"]
+margin_left = 40.0
+margin_top = 48.0
+margin_right = 72.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 32, 13 )
+
 [connection signal="ap_changed" from="PlayerStatus" to="UI/StatsPanel" method="_on_PlayerStatus_ap_changed"]
 [connection signal="hp_changed" from="PlayerStatus" to="UI/StatsPanel" method="_on_PlayerStatus_hp_changed"]
 [connection signal="mp_changed" from="PlayerStatus" to="UI/StatsPanel" method="_on_PlayerStatus_mp_changed"]
 [connection signal="died" from="Enemy" to="." method="_on_Enemy_died"]
-[connection signal="pressed" from="UI/SwordButton" to="." method="_on_SwordButton_pressed"]
+[connection signal="pressed" from="UI/BattleActionButtons/SwordButton" to="." method="_on_SwordButton_pressed"]
