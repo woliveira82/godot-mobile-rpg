@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Enemy.gd" type="Script" id=1]
+[ext_resource path="res://game/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Rat.png" type="Texture" id=2]
 [ext_resource path="res://themes/DefaultTheme.tres" type="Theme" id=3]
 

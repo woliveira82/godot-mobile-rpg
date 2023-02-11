@@ -29,7 +29,7 @@ func deal_damage():
 
 
 func take_damage(amount):
-	hp -= amount
+	self.hp -= amount
 	if is_dead():
 		emit_signal("died")
 		queue_free()
