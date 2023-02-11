@@ -23,12 +23,6 @@ func start_player_turn():
 	player.ap = player.max_ap
 
 
-func _on_SwordButton_pressed():
-	if enemy != null:
-		enemy.take_damage(4)
-		player.ap -= 1
-
-
 func _on_Enemy_died():
 	enemy = null
 	battle_action_buttons.hide()
