@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://game/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Rat.png" type="Texture" id=2]
 [ext_resource path="res://themes/DefaultTheme.tres" type="Theme" id=3]
+[ext_resource path="res://game/ui/HoverInfo.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=3]
 resource_name = "Attack"
@@ -86,3 +87,9 @@ valign = 1
 anims/Attack = SubResource( 3 )
 anims/RESET = SubResource( 2 )
 anims/Shake = SubResource( 1 )
+
+[node name="HoverInfo" parent="." instance=ExtResource( 4 )]
+margin_left = -24.0
+margin_top = -15.0
+margin_right = 24.0
+margin_bottom = 15.0
