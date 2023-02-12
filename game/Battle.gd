@@ -1,7 +1,7 @@
 extends Node
 
-onready var player = $PlayerStatus
-onready var enemy = $Enemy
+const BattleUnits = preload("res://game/BattleUnits.tres")
+
 onready var battle_action_buttons = $UI/BattleActionButtons
 
 
@@ -11,8 +11,9 @@ func _ready():
 
 func start_enemy_turn():
 	battle_action_buttons.hide()
+	var enemy = BattleUnits.Enemy
 	if enemy != null:
-		enemy.attack(player)
+		enemy.attack()
 		yield(enemy, "end_turn")
 	
 	start_player_turn()
@@ -20,11 +21,10 @@ func start_enemy_turn():
 
 func start_player_turn():
 	battle_action_buttons.show()
-	player.ap = player.max_ap
+	BattleUnits.Player.ap = BattleUnits.Player.max_ap
 
 
 func _on_Enemy_died():
-	enemy = null
 	battle_action_buttons.hide()
 
 
